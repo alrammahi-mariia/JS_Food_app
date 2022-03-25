@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrition tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Nutrition tracker</h1>
+    </header>
+    <main>
+      <h2>Add food</h2>
+      <form>
+        <div id="heading">
+          <label>Choose an item:</label>
+        </div>
+        <form>
+            <select name="foods" id="foods">
+              <option></option>
+              <option value="egg">Egg</option>
+              <option value="apple">Apple</option>
+              <option value="cheese">Cheese</option>
+              <option value="croissant">Croissant</option>
+            </select>
+            <!-- <input type="submit" value="Select" id ="select"/> -->
+        <div class="macros">
+            <div id="macro">
+                    <label for="carbs">Carbs:  </label>
+                  <div>
+                    <input type="number" value="0" placeholder="0g" id="carbs" />
+                  </div>
+            </div>
+            <div id="macro">
+                <label for="fat">Fat:</label>
+                <input type="number" value="0" placeholder="0g" id="fat" />
+            </div>
+            <div id="macro">
+                <label for="protein">Protein:</label>
+                <input type="number" value="0" placeholder="0g" id="protein"/>
+            </div>
+            <div id ="macro">
+                <input type ="submit" value="Add" id="add">     
+            </div>
+        </div>
+      </form>
+      <div class="stats">
+          <h2>Stats</h1>
+            <canvas id="myChart" width="100" height="50"></canvas>
+      </div>
+      <div class="log">
+          <h2>Log</h1>
+          <div id="bar">
+            <p>Total calories logged: <span id="calories">0</span></p>
+          </div>
+      </div>
+      <div class = "cards">
+       
+      </div>
+        <!-- <div class="card">
+          <div class="top">
+            <h1>Pizza</h1>
+            <p>202 calories</p>
+          </div>
+          <div class="bottom">
+            <ul>
+              <li><strong>Carbs:</strong> 20g</li>  
+              <li><strong>Protein:</strong> 20g</li>  
+              <li><strong>Fat:</strong> 20g</li>  
+            </ul>
+          </div>
+        </div> -->
+    </main>
+  </body>
+  <script type="module" src="./app.js"></script>
+</html>

@@ -1,0 +1,157 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header,
+main {
+  padding: 2rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+/*Header*/
+
+header {
+  background-color: rgb(0, 100, 177);
+  color: white;
+  font-weight: 500;
+}
+
+/*Form*/
+
+#heading {
+  padding: 1rem 0;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+form {
+  padding: 2rem 0;
+}
+
+#foods {
+  padding: 0.6rem;
+  width: 200px;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#select {
+  background-color: rgb(0, 92, 230);
+  border: none;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 90px;
+}
+
+.macros {
+  width: 200px;
+  margin-top: 1rem;
+}
+
+#macro {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#carbs,
+#protein,
+#fat {
+  font-family: inherit;
+  padding: 0.8rem;
+  border: none;
+  text-align: right;
+  background-color: rgba(128, 128, 128, 0.15);
+  width: 100px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#add {
+  background-color: rgb(0, 92, 230);
+  border: none;
+  color: white;
+  padding: 0.7rem;
+  border-radius: 5px;
+  width: 100px;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-left: 100px;
+}
+
+/*Sections*/
+
+.stats,
+.log {
+  padding: 2rem 0;
+}
+
+p {
+  padding: 1rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+#bar {
+  background-color: white;
+  border: 1px solid rgb(156, 155, 155);
+  box-shadow: 0 0 5px rgba(51, 51, 51, 0.39);
+  border-radius: 10px;
+  z-index: 1;
+  margin: 2rem auto;
+  height: 4rem;
+}
+
+.cards {
+  /* max-width: 1200px; */
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  border-radius: 10px;
+  min-height: 200px;
+  border: 1px solid rgb(156, 155, 155);
+  box-shadow: 0 0 5px rgba(51, 51, 51, 0.39);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 100, 177);
+  border-radius: 10px 10px 0px 0px;
+  color: white;
+}
+
+.top h1 {
+  margin-top: 1rem;
+}
+
+.bottom ul li {
+  display: inline-block;
+  padding: 1rem;
+  margin: 1rem;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+/*# sourceMappingURL=index.f855bde3.css.map */
