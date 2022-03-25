@@ -1,6 +1,4 @@
 import { FetchWrapper } from "./fetch-wrapper.js";
-import simple_number_formatter from "../node_modules/@skalwar/simple_number_formatter";
-// import snackbar from "../node_modules/snackbar/dist/snackbar.min.css";
 import Chart from "../node_modules/chart.js/auto";
 
 const form = document.querySelector("form");
@@ -35,13 +33,13 @@ const addItem = async () => {
   const newItem = await API.post("malram333", body);
   console.log(newItem);
   newChart(carbs, protein, fat);
-  // snackbar.show("Added sucessfully");
   addCard(newItem);
 };
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   addItem();
+  form.reset();
 });
 
 const getItems = async () => {
@@ -49,10 +47,6 @@ const getItems = async () => {
   console.log({ response: response.documents });
   response.documents.map((item) => addCard(item));
 };
-
-// let json = API.get("malram");
-// API.get(json).then((data) => {
-//   console.log(data);
 
 const newChart = (carbs, protein, fat) => {
   const ctx = document.getElementById("myChart");
@@ -89,12 +83,6 @@ const newChart = (carbs, protein, fat) => {
   });
 };
 
-// const calorieCalc = (item) => {
-//   const totalCal =
-//   //
-//   // console.log(calories);
-// };
-
 const addCard = (item) => {
   const carb = item.fields.carbs.integerValue;
   const protein = item.fields.protein.integerValue;
@@ -103,7 +91,7 @@ const addCard = (item) => {
   const card = `
   <div class="card">
   <div class="top">
-    <h1>${item.fields.foodname.stringValue}</h1>
+    <h2>${item.fields.foodname.stringValue}</h2>
     <p>${cal} kcal</p>
   </div>
   <div class="bottom">
@@ -116,12 +104,9 @@ const addCard = (item) => {
 
   document.querySelector(".cards").insertAdjacentHTML("beforeend", card);
 
-  // let totalCal = cal;
-  // foodCal.textContent = totalCal;
   let totalCal = foodCal.textContent;
   totalCal = Number(totalCal.replace(",", "")) + cal;
   foodCal.textContent = totalCal;
 };
 
 getItems();
-// calorieCalc(carbs, protein, fat);

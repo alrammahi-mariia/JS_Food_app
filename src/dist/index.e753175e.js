@@ -521,9 +521,6 @@ function hmrAcceptRun(bundle, id) {
 },{}],"bNKaB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _fetchWrapperJs = require("./fetch-wrapper.js");
-var _simpleNumberFormatter = require("../node_modules/@skalwar/simple_number_formatter");
-var _simpleNumberFormatterDefault = parcelHelpers.interopDefault(_simpleNumberFormatter);
-// import snackbar from "../node_modules/snackbar/dist/snackbar.min.css";
 var _auto = require("../node_modules/chart.js/auto");
 var _autoDefault = parcelHelpers.interopDefault(_auto);
 const form = document.querySelector("form");
@@ -557,12 +554,12 @@ const addItem = async ()=>{
     const newItem = await API.post("malram333", body);
     console.log(newItem);
     newChart(carbs, protein, fat);
-    // snackbar.show("Added sucessfully");
     addCard(newItem);
 };
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     addItem();
+    form.reset();
 });
 const getItems = async ()=>{
     const response = await API.get("malram333");
@@ -572,9 +569,6 @@ const getItems = async ()=>{
     response.documents.map((item)=>addCard(item)
     );
 };
-// let json = API.get("malram");
-// API.get(json).then((data) => {
-//   console.log(data);
 const newChart = (carbs, protein, fat)=>{
     const ctx = document.getElementById("myChart");
     myChart.destroy();
@@ -617,11 +611,6 @@ const newChart = (carbs, protein, fat)=>{
         }
     });
 };
-// const calorieCalc = (item) => {
-//   const totalCal =
-//   //
-//   // console.log(calories);
-// };
 const addCard = (item)=>{
     const carb = item.fields.carbs.integerValue;
     const protein = item.fields.protein.integerValue;
@@ -630,7 +619,7 @@ const addCard = (item)=>{
     const card = `
   <div class="card">
   <div class="top">
-    <h1>${item.fields.foodname.stringValue}</h1>
+    <h2>${item.fields.foodname.stringValue}</h2>
     <p>${cal} kcal</p>
   </div>
   <div class="bottom">
@@ -641,15 +630,13 @@ const addCard = (item)=>{
     </ul>
   </div>`;
     document.querySelector(".cards").insertAdjacentHTML("beforeend", card);
-    // let totalCal = cal;
-    // foodCal.textContent = totalCal;
     let totalCal = foodCal.textContent;
     totalCal = Number(totalCal.replace(",", "")) + cal;
     foodCal.textContent = totalCal;
 };
-getItems(); // calorieCalc(carbs, protein, fat);
+getItems();
 
-},{"./fetch-wrapper.js":"5hTQM","../node_modules/@skalwar/simple_number_formatter":"lPG4R","../node_modules/chart.js/auto":"6r6LS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5hTQM":[function(require,module,exports) {
+},{"./fetch-wrapper.js":"5hTQM","../node_modules/chart.js/auto":"6r6LS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5hTQM":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "FetchWrapper", ()=>FetchWrapper
@@ -714,17 +701,6 @@ exports.export = function(dest, destName, get) {
         enumerable: true,
         get: get
     });
-};
-
-},{}],"lPG4R":[function(require,module,exports) {
-'use strict';
-/**
- * Adds commas to a number
- * @param {number} number
- * @param {string} locale
- * @return {string}
- */ module.exports = function(number, locale) {
-    return number.toLocaleString(locale);
 };
 
 },{}],"6r6LS":[function(require,module,exports) {

@@ -117,7 +117,6 @@ p {
 }
 
 .cards {
-  /* max-width: 1200px; */
   margin: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -143,7 +142,7 @@ p {
   color: white;
 }
 
-.top h1 {
+.top h2 {
   margin-top: 1rem;
 }
 
